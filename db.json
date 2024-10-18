@@ -1,0 +1,15 @@
+{
+  "questions": [
+    {
+      "questionText": "How do you judge what should be added in the next version of the app?",
+      "options": ["Data Analysis", "User's feedback", "Copy from similar product", "Make a questionnaire", "Personal feeling"],
+      "correctAnswer": "User's feedback"
+  },
+  {
+      "questionText": "What is the best way to receive user feedback?",
+      "diagram": "/logo512.png", 
+      "options": ["Data Analysis", "User's feedback", "Copy from similar product", "Make a questionnaire", "Personal feeling"],
+      "correctAnswer": "User's feedback"
+  }
+  ]
+}

@@ -1,0 +1,516 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.quiz-app {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.home-logo{
+    width: 29px;
+    height: 40px;
+    top: 50px;
+    left: 28%;
+    transform: translateX(-50%);
+    gap: 0px;
+    opacity: 1;
+    position: absolute;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.Quiz {
+    width: 432px;
+    height: 396px;
+    gap: 0px;
+    opacity: 1;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Poppins;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 90px;
+    text-align: center;
+    color: rgba(255, 59, 60, 1);
+}
+
+.results-correct {
+    width: 670px;
+    height: 130px;
+    border-radius: 20px;
+    background: rgb(191, 229, 209);
+    opacity: 0.9;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 34px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+
+.results-correct::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.results-incorrect {
+    width: 670px;
+    height: 130px;
+    border-radius: 20px;
+    background: rgb(233, 178, 179);
+    opacity: 0.9;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 34px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+
+.results-incorrect::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home {
+    text-align: center;
+}
+
+h1.home-title {
+    width: 291px;
+    height: 70px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 0px;
+    opacity: 1;
+    position: absolute;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.start-quiz-button {
+    width: 230px;
+    height: 40px;
+    background: rgba(255, 59, 63, 1);
+    border-radius: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.start-quiz-button:hover {
+    background: rgba(255, 59, 63, 1);
+}
+
+.quiz {
+    margin-top: 20px;
+}
+
+.quiz-question {
+    font-size: 24px;
+    margin-top: 100px ;
+}
+
+.quiz-option-button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(243, 244, 250, 1);
+    color: rgb(0, 0, 0);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 670px;
+    height: 160px;
+    position: relative;
+    font-size: 18px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Add dotted border when hovering */
+.quiz-option-button:hover {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(191, 229, 209); /* Green dotted border */
+}
+
+/* Add a circle to show selected state */
+.quiz-option-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(191, 229, 209, 1); /* Green border */
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Add tick to the circle when selected */
+.quiz-option-button.selected {
+    background-color: rgb(255, 255, 255); 
+    border: 2px solid rgb(63, 229, 141);
+}
+
+.quiz-option-button.selected::before {
+    background-color: rgba(63, 229, 141); /* Filled green circle */
+    border: 2px solid rgb(63, 229, 141); /* Green border */
+}
+
+.quiz-option-button.selected::after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: white;
+}
+
+.quiz-option-button span {
+    margin-left: 50px; /* Move the text to the right to avoid overlapping the circle */
+    display: block;
+    font-size: 16px;
+}
+
+
+.results {
+    text-align: center;
+}
+
+.results-title {
+    width: 757px;
+    height: 59px;
+    top: 308px;
+    left: 1px;
+    gap: 0px;
+    opacity: 0.8px;
+    font-family: Nunito;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 56px;
+    text-align: center;
+}
+
+.restart-button {
+    width: 230px;
+    height: 40px;
+    background: rgba(255, 59, 63, 1);
+    border-radius: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    background-color: #d32f2f;
+}
+
+.card {
+    width: 300px; /* Card width */
+    padding: 20px; /* Card padding */
+    border: 1px solid #ccc; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin: 20px; /* Space around the card */
+}
+
+.card-header {
+    margin-bottom: 10px; /* Space between header and body */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.add-question-form {
+    margin-top: 2000px;
+    width: 730px; /* Space above the form */
+    display: flex;
+    flex-direction: column; /* Stack input and button vertically */
+}
+
+.form-title {
+    font-size: 20px; /* Title font size */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.form-input {
+    display: block; /* Block-level input */
+    margin: 10px 0; /* Margin around the input */
+    padding: 10px; /* Input padding */
+    width: 100%; /* Full width */
+    border: 1px solid #ccc; /* Input border */
+    border-radius: 5px; /* Rounded corners for input */
+}
+
+.add-question-button {
+    padding: 10px 20px; /* Button padding */
+    background-color: #2196F3; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Space above button */
+}
+
+.add-question-button:hover {
+    background-color: #1976D2; /* Darker button color on hover */
+}
+
+div.home-container {
+    width: 720px;
+    height: 1390px;
+    margin: 0 auto;
+    top: 234px;
+    border-radius: 60px 60px 0px 0px;
+    background-color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.next-button {
+    width: 230px;
+    height: 40px;
+    background: rgba(255, 59, 63, 1);
+    border-radius: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quiz-app-container {
+    width: 760px;
+    height: 1624px;
+    gap: 0px;
+    opacity: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(175, 156, 243, 0) 7.92%, #AF9CF3 86.48%);
+    background-blend-mode: multiply;
+    padding-top: 100px;
+}
+
+.question-counter-circle {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    z-index: 10;
+    overflow: hidden; /* Prevent child elements from overflowing */
+}
+
+.question-counter-circle::before {
+    content: '';
+    position: absolute;
+    width: 150%; /* Ensures the gradient covers the circle */
+    height: 150%;
+    border-radius: 50%;
+    z-index: -2; /* Place it behind the inner circle */
+}
+
+.question-counter-circle::after {
+    content: '';
+    position: absolute;
+    top: 20px; /* Adjust to create inner border effect */
+    left: 20px; 
+    right: 20px; 
+    bottom: 20px; 
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255); /* Ensure inner area is white */
+    border-color: conic-gradient(green 0deg 90deg, gray 90deg 360deg); /* Create the circular gradient */
+    border: 10px; /* Create space for the inner border */
+    box-shadow: inset 0 0 0 10px rgb(247, 247, 247); /* Creates a gray inner border */
+    z-index: -1; /* Place it above the gradient but below the text */
+}
+
+/* Create a pseudo-element for the inner gradient border effect */
+.question-counter-circle::before {
+    content: '';
+    position: absolute;
+    top: 10px; /* Inner spacing */
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    border: 10px solid transparent; /* Transparent border to create space */
+    z-index: -1; /* Place behind the text */
+}
+
+
+
+
+
+
+
+
+div.quiz-app-container1{
+    width: 720px;
+    height: 1390px;
+    margin: 0 auto;
+    top: 234px;
+    border-radius: 60px 60px 0px 0px;
+    background-color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.question-diagram {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.diagram-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.percentage-circle {
+    width: 250px; /* Size of the main circle */
+    height: 250px; /* Size of the main circle */
+    position: relative; /* Position context for pseudo-elements */
+    background-color: rgb(255, 255, 255); /* Solid white color for the main circle */
+    border-radius: 50%; /* Make it circular */
+    border: 50px solid rgba(235, 237, 245, 1); /* Existing border */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    display: flex; /* Center contents */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-family: 'Source Sans Pro', sans-serif; /* Font family */
+    font-size: 28px; /* Font size for text */
+    font-weight: 600; /* Font weight */
+    color: #333; /* Text color */
+    left: 32%; /* Positioning */
+    overflow: visible; /* Ensure pseudo-elements are visible */
+    z-index: 10; /* Ensure it's on top */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+
+}
+
+/* First outer border */
+.percentage-circle::before {
+    content: '';
+    position: absolute;
+    width: 340px; /* Larger size to account for the new border */
+    height: 340px;
+    border-radius: 50%; /* Make it circular */
+    border: 10px solid rgb(76, 67, 67); /* First additional border */
+    z-index: 5; /* Ensure it's behind the main circle */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+}
+
+.percentage-circle::after {
+    content: '';
+    position: absolute;
+    top: -40px; /* Position above the circle */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #080808; /* Arrow pointing down */
+    z-index: 1; /* Ensure the arrow is on top of the half-circle but below the main circle */
+}
+
+/* Percentage text inside the circle */
+.percentage-text {
+    color: #333; /* Color of the percentage text */
+    font-weight: bold; /* Font weight */
+    font-size: 24px; /* Font size */
+    z-index: 20; /* Ensure text is on top */
+}

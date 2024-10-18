@@ -1,0 +1,41 @@
+/* HomePage.css */
+
+.home-container {
+    width: 750px;
+    height: 1400px;
+    position: relative; /* Added for positioning */
+    top: -210px;
+    left: -2948px;
+    gap: 0px;
+    opacity: 0;
+}
+
+.start-button {
+    width: 291px;
+    height: 160px;
+    position: absolute; /* Change to absolute if necessary for positioning */
+    top: 1200px;
+    left: 40px;
+    gap: 0px;
+    opacity: 0; /* Set to 0 for visibility purposes */
+}
+
+.header {
+    width: 432px;
+    height: 70px;
+    position: absolute; /* Change to absolute if necessary for positioning */
+    top: 40px;
+    left: 230px;
+    gap: 0px;
+    opacity: 0; /* Set to 0 for visibility purposes */
+}
+
+.card {
+    width: 670px;
+    height: 396px;
+    position: absolute; /* Change to absolute if necessary for positioning */
+    top: 416px;
+    left: 159px;
+    gap: 0px;
+    opacity: 0; /* Set to 0 for visibility purposes */
+}

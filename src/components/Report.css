@@ -1,0 +1,28 @@
+.report {
+    width: 750px; /* Overall width */
+    height: 1390px; /* Overall height */
+    position: relative; /* Needed for positioning */
+    top: 234px; /* Positioning from the top */
+    gap: 0; /* Gap between elements */
+    border-radius: 60px 60px 0 0; /* Rounded corners */
+    opacity: 1; /* Fully visible */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center items */
+    justify-content: center; /* Center items */
+    background-color: white; /* Background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.report h2 {
+    width: 670px; /* Width of the title */
+    height: 160px; /* Height of the title */
+    top: 1150px; /* Positioning */
+    opacity: 1; /* Fully visible */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.report p {
+    margin: 10px 0; /* Space between paragraphs */
+}
+
